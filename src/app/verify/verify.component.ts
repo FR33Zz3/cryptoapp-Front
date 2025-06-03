@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { Component } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { RouterLink } from '@angular/router'
+import { environment } from '../../environments/environment'
 
 @Component({
   selector: 'app-verify',
@@ -317,7 +318,7 @@ export class VerifyComponent {
     return !!this.documentContent && !!this.signatureContent && !!this.publicKey && !this.isVerifying;
   }
 
-  verify(): void {
+ verify(): void {
     if (!this.canVerify()) return;
 
     this.isVerifying = true;
@@ -329,7 +330,8 @@ export class VerifyComponent {
       publicKey: this.publicKey
     };
 
-    this.http.post<{ isValid: boolean }>('/api/verify', payload).subscribe({
+    // Использование environment.apiUrl
+    this.http.post<{ isValid: boolean }>(`${environment.apiUrl}/verify`, payload).subscribe({
       next: (response) => {
         this.verificationResult = response.isValid;
       },
