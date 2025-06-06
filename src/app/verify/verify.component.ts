@@ -331,7 +331,7 @@ export class VerifyComponent {
     };
 
     // Использование environment.apiUrl
-    this.http.post<{ isValid: boolean }>(`${environment.apiUrl}/verify`, payload).subscribe({
+    this.http.post<{ isValid: boolean }>(`https://cryptoapp-1-w7m2.onrender.com/api/verify`, payload).subscribe({
       next: (response) => {
         this.verificationResult = response.isValid;
       },
