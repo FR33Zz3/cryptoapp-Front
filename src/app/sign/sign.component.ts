@@ -234,7 +234,7 @@ export class SignComponent {
       document: this.documentContent
     };
 
-    this.http.post<{ signature: string; publicKey: string }>('https://cryptoapp-1-w7m2.onrender.com/api/sign', payload).subscribe({
+    this.http.post<{ signature: string; publicKey: string }>('http://85.235.205.223:8080/api/sign', payload).subscribe({
       next: (response) => {
         this.signature = response.signature;
         this.publicKey = response.publicKey;
