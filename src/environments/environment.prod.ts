@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://cryptoapp-1-w7m2.onrender.com/api/sign'  // URL вашего API на Render
+  apiUrl: 'http://85.235.205.223:8080/api/sign'  // URL вашего API на Render
 };
