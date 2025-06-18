@@ -234,7 +234,7 @@ export class SignComponent {
       document: this.documentContent
     };
 
-    this.http.post<{ signature: string; publicKey: string }>('localhost:8080/api/sign', payload).subscribe({
+    this.http.post<{ signature: string; publicKey: string }>('localhost:8080', payload).subscribe({
       next: (response) => {
         this.signature = response.signature;
         this.publicKey = response.publicKey;
