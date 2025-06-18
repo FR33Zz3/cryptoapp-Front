@@ -331,7 +331,7 @@ export class VerifyComponent {
     };
 
     // Использование environment.apiUrl
-    this.http.post<{ isValid: boolean }>(`http://85.235.205.223:8080/api/verify`, payload).subscribe({
+    this.http.post<{ isValid: boolean }>(`localhost:8080/api/verify`, payload).subscribe({
       next: (response) => {
         this.verificationResult = response.isValid;
       },
