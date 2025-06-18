@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'localhost:8080'  // URL для локального бэкенда
+  apiUrl: 'localhost:8080/api/sign'  // URL для локального бэкенда
 };
